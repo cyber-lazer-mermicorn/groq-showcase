@@ -1,5 +1,5 @@
 # Groq Ultra-Fast Engine
-## Built by Cherry Barton | AI Solutions Engineer
+## Built by Cherry Shanaley (Chan) | AI Solutions Engineer
 
 The fastest AI inference in the world: Groq LPU with 500+ tokens/sec.
 
@@ -95,6 +95,6 @@ I use Groq in my Travel Deal Lab for fast AI inference. This repo showcases:
 
 ## Contact
 
-**Cherry Barton** — cherry@lazermermicorn.com
+**Cherry Shanaley (Chan)** — cyber.lazer.mermicorn@gmail.com
 
 *AI Solutions Engineer | 9 Production Platforms | Groq Speed Demon*
