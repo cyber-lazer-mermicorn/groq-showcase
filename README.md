@@ -1,100 +1,40 @@
-# Groq Ultra-Fast Engine
-## Built by Cherry Shanaley (Chan) | AI Solutions Engineer
+# Groq Inference Showcase
 
-The fastest AI inference in the world: Groq LPU with 500+ tokens/sec.
+**What this proves:** Reproducible low-latency inference measurement using Groq's
+API — throughput benchmarks, time-to-first-token, model comparison, and
+latency-aware routing patterns. Numbers, not claims.
 
-**Live:** https://groq-showcase.lazermermicorn.com
-
----
-
-## What This Demonstrates
-
-### Groq LPU Speed
-- 500+ tokens/sec (10x faster than GPU)
-- Sub-100ms time-to-first-token
-- Real-time AI applications
-
-### Latest Models
-- Llama 4 Maverick (latest)
-- Mixtral 8x22B
-- Gemma 2 27B
-- DeepSeek V3
-
-### Production Patterns
-- Streaming responses
-- Batch processing
-- Rate limiting
-- Fallback chains
+**Portfolio:** [cyber-lazer-mermicorn](https://github.com/cyber-lazer-mermicorn) · Cherry Shanaley
 
 ---
 
-## Tech Stack
+## Key patterns
 
-- **Framework:** Next.js 15
-- **AI:** Groq SDK (latest)
-- **Styling:** Tailwind CSS 4
-- **Deployment:** Vercel Edge
+| Pattern | What it proves |
+|---|---|
+| Latency measurement | TTFT and total latency per model, averaged over N runs |
+| Throughput benchmarking | Tokens/sec across Llama, Mixtral, Gemma variants |
+| Model routing | Route by latency budget — fast vs quality trade-off |
+| Streaming | Chunk timing measurement, not just final output |
+| Structured outputs | Typed JSON via Groq’s response format, Zod-validated |
 
----
-
-## Getting Started
+## Run locally
 
 ```bash
-# Install dependencies
 npm install
-
-# Set up environment
-cp .env.example .env.local
-# Add your Groq API key
-
-# Run development
-npm run dev
+cp .env.example .env   # add GROQ_API_KEY
+npm run benchmark      # runs latency suite, prints table
+npm run demo           # single-inference demo
+npm test
 ```
 
----
+## Evidence
 
-## Features
+- Benchmark output is a printed table: model | TTFT | tokens/sec | total
+- Results are non-deterministic by nature; multiple runs are averaged
+- Test suite asserts schema conformance and that latency values are positive numbers
 
-### 1. Lightning Chat
-500+ tokens/sec with Groq LPU.
+## Honest scope
 
-### 2. Model Comparison
-Compare speed across all models.
-
-### 3. Batch Processing
-Process 1000 requests in parallel.
-
-### 4. Streaming
-Real-time token streaming.
-
-### 5. Fallback Chain
-Automatic failover to OpenAI.
-
----
-
-## Performance Benchmarks
-
-| Model | Tokens/sec | Latency | Quality |
-|-------|------------|---------|---------|
-| Llama 4 Maverick | 520 | 45ms | ⭐⭐⭐⭐⭐ |
-| Mixtral 8x22B | 380 | 52ms | ⭐⭐⭐⭐ |
-| Gemma 2 27B | 410 | 48ms | ⭐⭐⭐⭐ |
-| DeepSeek V3 | 290 | 65ms | ⭐⭐⭐⭐⭐ |
-
----
-
-## Why I Built This
-
-I use Groq in my Travel Deal Lab for fast AI inference. This repo showcases:
-
-- **Speed** for real-time applications
-- **Reliability** with fallback chains
-- **Cost efficiency** with batch processing
-
----
-
-## Contact
-
-**Cherry Shanaley (Chan)** — cyber.lazer.mermicorn@gmail.com
-
-*AI Solutions Engineer | 9 Production Platforms | Groq Speed Demon*
+Showcase-grade: measurement patterns are correct. No production load balancing,
+fallback routing, or cost tracking included.
